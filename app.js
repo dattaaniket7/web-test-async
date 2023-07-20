@@ -1,10 +1,15 @@
-//Global execution context
-logger();
-console.log(1);
+function first() {
+  console.log(1);
+}
 
-function logger() {
+function second() {
   console.log(2);
+}
+
+function third() {
   console.log(3);
 }
 
-//Function exec context
+first();
+second();
+third();
