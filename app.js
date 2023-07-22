@@ -1,17 +1,11 @@
-function first() {
-  console.log(1);
-}
-
-function second(callback) {
+function callbackHell() {
   setTimeout(() => {
-    console.log(2);
-    callback();
-  }, 0);
+    const data = { user: "oldMonk" };
+    console.log(data);
+    setTimeout(() => {
+      console.log("Data has been updated");
+    }, 1000);
+  }, 500);
 }
 
-function third() {
-  console.log(3);
-}
-
-first();
-second(third);
+callbackHell();
