@@ -1,15 +1,13 @@
-const promise = new Promise((resolve, reject) => {
-  resolve({ user: "oldMonk" });
-});
-
-promise
+fetch("https://jsonplaceholder.typico")
   .then((data) => {
-    const user = data;
-    return fetch("https://jsonplaceholder.typicode.com/todos/1");
+    return data.json();
   })
-  .then((todos) => {
-    console.log(todos);
+  .then((jsonedData) => {
+    console.log(jsonedData);
   })
   .catch((err) => {
-    console.log(err);
+    console.log("Oh nooo something went wrong");
+  })
+  .finally(() => {
+    console.log("well everything is done, we tried");
   });
