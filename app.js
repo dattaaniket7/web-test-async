@@ -2,8 +2,11 @@ function first() {
   console.log(1);
 }
 
-function second() {
-  console.log(2);
+function second(callback) {
+  setTimeout(() => {
+    console.log(2);
+    callback();
+  }, 0);
 }
 
 function third() {
@@ -11,5 +14,4 @@ function third() {
 }
 
 first();
-second();
-third();
+second(third);
