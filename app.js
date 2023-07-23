@@ -1,13 +1,10 @@
-async function getTodos() {
-  try {
-    const response = await fetch("https://jsonplacder.typicode.com/todos/1");
-    const data = await response.json();
-    console.log(data);
-    console.log(2);
-  } catch (err) {
-    console.log("Something went wrong...");
-    console.log(err);
-  }
-}
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, "foo");
+});
 
-getTodos();
+Promise.all([promise1, promise2, promise3]).then((values) => {
+  console.log(values);
+});
+// Expected output: Array [3, 42, "foo"]
